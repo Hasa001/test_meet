@@ -1,0 +1,67 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.str-video {
+  background-color: #328bff;
+  color: #d4d4d4;
+  height: 100vh; /* Fixed typo: Changed '100dvh' to '100vh' */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.str-video__participant-view.str-video__participant-view--dominant-speaker{
+  border-radius: 1rem;
+}
+
+.str-video__speaker-layout__spotlight {
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0;
+  margin: 0;
+  border: 0;
+  border-radius: 1rem;
+}
+
+.loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.loading svg polyline {
+  fill: none;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.loading svg polyline#back {
+  fill: none;
+  stroke: #ff4d5033;
+}
+
+.loading svg polyline#front {
+  fill: none;
+  stroke: #ff4d4f;
+  stroke-dasharray: 48, 144;
+  stroke-dashoffset: 192;
+  animation: dash_682 1.4s linear infinite;
+}
+
+@keyframes dash_682 {
+  72.5% {
+    opacity: 0;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
